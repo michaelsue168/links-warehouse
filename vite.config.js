@@ -7,6 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/links-warehouse/",
   plugins: [vue(), vueJsx(), tailwindcss()],
   resolve: {
     alias: {
