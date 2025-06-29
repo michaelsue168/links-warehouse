@@ -22,6 +22,7 @@
 import { computed, reactive } from "vue";
 import { LinkOutlined } from "@ant-design/icons-vue";
 import { SetLinksList, LinksList, SortLinksList } from "@/services/linksHandlers";
+import { message } from "ant-design-vue";
 
 // 表單內容
 const formState = reactive({
@@ -55,5 +56,11 @@ const handleFinish = () => {
   LinksList.value.unshift({ ...formState });
   SortLinksList();
   SetLinksList();
+  formState.ID = "";
+  formState.Title = "";
+  formState.Link = "";
+  formState.createAt = "";
+
+  message.success("Added successfully !");
 };
 </script>

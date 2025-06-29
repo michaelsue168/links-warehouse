@@ -1,4 +1,5 @@
 import { ref } from "vue";
+import { message } from "ant-design-vue";
 
 // 連結列表
 const LinksList = ref([]);
@@ -21,6 +22,7 @@ const SetLinksList = () => {
 const DeleteLinksList = () => {
   LinksList.value = [];
   SetLinksList();
+  message.success("Deleted successfully !");
 };
 
 // 刪除特定連結
@@ -29,6 +31,7 @@ const DeleteLink = (ID) => {
   if (index !== -1) {
     LinksList.value.splice(index, 1);
     SetLinksList();
+    message.success("Deleted successfully !");
   }
 };
 
