@@ -21,7 +21,7 @@ const SetLinksList = () => {
 // 移除localStorage列表
 const DeleteLinksList = () => {
   LinksList.value = [];
-  SetLinksList();
+  localStorage.removeItem("LinksList")
   message.success("Deleted successfully !");
 };
 
